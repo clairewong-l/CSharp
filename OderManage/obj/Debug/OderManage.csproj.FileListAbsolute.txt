@@ -1,0 +1,5 @@
+/Users/arielwong/学习资料/大二下/软件构造基础C#/ppt/第五讲-示例代码/OderManage/bin/Debug/OderManage.exe
+/Users/arielwong/学习资料/大二下/软件构造基础C#/ppt/第五讲-示例代码/OderManage/bin/Debug/OderManage.pdb
+/Users/arielwong/学习资料/大二下/软件构造基础C#/ppt/第五讲-示例代码/OderManage/obj/Debug/OderManage.csprojAssemblyReference.cache
+/Users/arielwong/学习资料/大二下/软件构造基础C#/ppt/第五讲-示例代码/OderManage/obj/Debug/OderManage.exe
+/Users/arielwong/学习资料/大二下/软件构造基础C#/ppt/第五讲-示例代码/OderManage/obj/Debug/OderManage.pdb
