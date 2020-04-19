@@ -1,0 +1,25 @@
+﻿<Properties StartupConfiguration="{AE158866-2FA6-4F2A-AAB6-A38E747AC9EE}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Order.cs">
+    <Files>
+      <File FileName="Order.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="OderManage" expanded="True">
+            <Node name="OderManage" expanded="True">
+              <Node name="Order.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.OderManage PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
