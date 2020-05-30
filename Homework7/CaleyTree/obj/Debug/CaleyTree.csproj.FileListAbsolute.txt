@@ -1,0 +1,10 @@
+D:\CSharpHomework\Homework\CaleyTree\bin\Debug\CaleyTree.exe.config
+D:\CSharpHomework\Homework\CaleyTree\bin\Debug\CaleyTree.exe
+D:\CSharpHomework\Homework\CaleyTree\bin\Debug\CaleyTree.pdb
+D:\CSharpHomework\Homework\CaleyTree\obj\Debug\CaleyTree.csprojAssemblyReference.cache
+D:\CSharpHomework\Homework\CaleyTree\obj\Debug\CaleyTree.Form1.resources
+D:\CSharpHomework\Homework\CaleyTree\obj\Debug\CaleyTree.Properties.Resources.resources
+D:\CSharpHomework\Homework\CaleyTree\obj\Debug\CaleyTree.csproj.GenerateResource.cache
+D:\CSharpHomework\Homework\CaleyTree\obj\Debug\CaleyTree.csproj.CoreCompileInputs.cache
+D:\CSharpHomework\Homework\CaleyTree\obj\Debug\CaleyTree.exe
+D:\CSharpHomework\Homework\CaleyTree\obj\Debug\CaleyTree.pdb

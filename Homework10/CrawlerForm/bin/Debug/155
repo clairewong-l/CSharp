@@ -1,0 +1,474 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="一：背景 1. 讲故事 如果你常翻看FCL的源码，你会发现这里面有不少方法借助了C/C&#x2B;&#x2B;的力量让C#更快更强悍,如下所示： [DllImport(&amp;amp;quot;QCall&amp;amp;quot;," />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>使用PInvoke互操作，让C#和C++愉快的交互优势互补 - 一线码农 - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.ico?v=20200522" type="image/x-icon" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=KCO3_f2W_TC__-jZ7phSnmoFkQuWMJH2yAgA16eE3eY" />
+    <link id="MainCss" rel="stylesheet" href="/skins/imetro_hd/bundle-imetro_hd.min.css?v=gS0FloTY-RBJQcN3GCAKG6fAr6HHKtDMTw60VxjN79c" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/huangxincheng/custom.css?v=z0WD6a4nBgoSBHjlq93cyLFnQd8=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/imetro_hd/bundle-imetro_hd-mobile.min.css?v=VacchHeVg6bp3gCO8NqMH8D8fhA8iyRbb0JgoDUvn4o" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/huangxincheng/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/huangxincheng/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/huangxincheng/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=6bwfCY2e02dLOXNW99G2BHZkYFmw9QyYTWeJ-W-sudo"></script>
+    <script>
+        var currentBlogId = 85195;
+        var currentBlogApp = 'huangxincheng';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'iMetro_HD';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/huangxincheng/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/huangxincheng/"></a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/huangxincheng/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E4%B8%80%E7%BA%BF%E7%A0%81%E5%86%9C">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/huangxincheng/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+304&nbsp; </span>
+<span id="stats_article_count">文章 - 
+1&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+5197</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/huangxincheng/p/12985351.html">使用PInvoke互操作，让C#和C++愉快的交互优势互补</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+    <h2 id="一：背景">一：背景</h2>
+<h3 id="1-讲故事">1. 讲故事</h3>
+<p>如果你常翻看FCL的源码，你会发现这里面有不少方法借助了C/C++的力量让C#更快更强悍,如下所示：</p>
+<pre><code class="language-C#">
+	[DllImport(&quot;QCall&quot;, CharSet = CharSet.Unicode)]
+	[SecurityCritical]
+	[SuppressUnmanagedCodeSecurity]
+	private static extern bool InternalUseRandomizedHashing();
+
+	[DllImport(&quot;mscoree.dll&quot;, EntryPoint = &quot;ND_RU1&quot;)]
+	[SuppressUnmanagedCodeSecurity]
+	[SecurityCritical]
+	public static extern byte ReadByte([In] [MarshalAs(UnmanagedType.AsAny)] object ptr, int ofs);
+
+</code></pre>
+<p>联想到上一篇阿里短信netsdk也是全用C++实现，然后用C#做一层壳，两者相互打辅助彰显更强大的威力，还有很多做物联网的朋友对这种.Net互操作技术太熟悉不过了，很多硬件，视频设备驱动都是用C/C++实现，然后用winform/WPF去做管理界面，C++还是在大学里学过，好多年没接触了，为了练手这一篇用P/Invoke来将两者相互打通。</p>
+<h2 id="二：pinvoke互操作技术">二：PInvoke互操作技术</h2>
+<h3 id="1-一些前置基础">1. 一些前置基础</h3>
+<p>这里我用vs2019创建C++的Console App，修改两个配置： 将程序导出为dll，修改成compile方式为<code>Compile as C++ Code (/TP)</code>。</p>
+<p><img src="https://img2020.cnblogs.com/other/214741/202005/214741-20200529082058029-1669782279.png" alt=""></p>
+<p><img src="https://img2020.cnblogs.com/other/214741/202005/214741-20200529082058314-1211310366.png" alt=""></p>
+<h3 id="2-基本类型的互操作">2. 基本类型的互操作</h3>
+<p>简单类型是最好处理的，基本上int,long，double都是一一对应的，这里我用C++实现了简单的Sum操作，画一个简图就是下面这样：</p>
+<p><img src="https://img2020.cnblogs.com/other/214741/202005/214741-20200529082059175-979853684.png" alt=""></p>
+<p>新建一个cpp文件和一个h头文件，如下代码。</p>
+<pre><code class="language-C++">
+--- Person.cpp
+
+extern &quot;C&quot;
+{
+	_declspec(dllexport) int Sum(int a, int b);
+}
+
+
+--- Person.h
+
+#include &quot;Person.h&quot;
+#include &quot;iostream&quot;
+using namespace std;
+
+int Sum(int a, int b)
+{
+	return a + b;
+}
+
+</code></pre>
+<p>有一个注意的地方就是 <code>extern &quot;C&quot;</code>，一定要用C方式导出，如果按照C++方式，Sum名称会被编译器自动修改，不信你把<code>extern &quot;C&quot;</code>去掉，我用ida打开给你看一下，被修改成了 <code>?Sum@@YAHHH@Z</code>, 尴尬。</p>
+<p><img src="https://img2020.cnblogs.com/other/214741/202005/214741-20200529082059397-2110055706.png" alt=""></p>
+<p>接下来把C++项目生成好的 <code>ConsoleApplication1.dll</code> copy到C#的bin目录下，代码如下：</p>
+<pre><code class="language-C#">
+    class Program
+    {
+        [DllImport(&quot;ConsoleApplication1.dll&quot;, CallingConvention = CallingConvention.Cdecl)]
+        extern static int Sum(int a, int b);
+
+        static void Main(string[] args)
+        {
+            var result = Sum(10, 20);
+
+            Console.WriteLine($&quot;10+20={result}&quot;);
+
+            Console.ReadLine();
+        }
+    }
+
+---- output -----
+
+10+20=30
+
+</code></pre>
+<h3 id="2-字符串的互操作">2. 字符串的互操作</h3>
+<p>我们知道托管代码和非托管代码是两个世界，这中间涉及到了两个世界的的类型映射，那映射关系去哪找呢？ 微软的msdn还真有一篇介绍 封送通用类型对照表： <a href="https://docs.microsoft.com/zh-cn/dotnet/standard/native-interop/type-marshaling">https://docs.microsoft.com/zh-cn/dotnet/standard/native-interop/type-marshaling</a> ，大家有兴趣可以看一下。</p>
+<p><img src="https://img2020.cnblogs.com/other/214741/202005/214741-20200529082059611-1685264301.png" alt=""></p>
+<p>从图中可以看到，C#中的string对应C++中的char*，所以这里就好处理了。</p>
+<pre><code class="language-C++">
+--- Person.cpp
+
+extern &quot;C&quot;
+{
+	//字符串
+	_declspec(dllexport) int GetLength(char* chs);
+}
+
+
+--- Person.h
+
+#include &quot;Person.h&quot;
+#include &quot;iostream&quot;
+using namespace std;
+
+int GetLength(char* chs)
+{
+	return strlen(chs);
+}
+
+</code></pre>
+<p>然后我们看一下C#这边怎么写，通常string在C++中使用asc码，而C#中是Unicode，所以在DllImport中加一个CharSet指定即可。</p>
+<pre><code class="language-C#">
+    class Program
+    {
+        [DllImport(&quot;ConsoleApplication1.dll&quot;, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        extern static int GetLength([MarshalAs(UnmanagedType.LPStr)] string str);
+
+        static void Main(string[] args)
+        {
+            var str = &quot;hello world&quot;;
+            Console.WriteLine($&quot;length={GetLength(str)}&quot;);
+
+            Console.ReadLine();
+        }
+    }
+
+---- output -----
+
+length=11
+
+</code></pre>
+<h3 id="3-复杂类型的处理">3. 复杂类型的处理</h3>
+<p>复杂类型配置对应关系就难搞了，还容易搞错，错了弄不好还内存泄漏，怕了吧，幸好微软提供了一个小工具<code>P/Invoke Interop Assistant </code>，它可以帮助我们自动匹配对应关系，我就演示一个封送Person类的例子。</p>
+<p><img src="https://img2020.cnblogs.com/other/214741/202005/214741-20200529082059868-1776405051.png" alt=""></p>
+<p>从图中可以看到，左边写好 <code>C++</code>，右边自动给你配好<code>C#</code>的映射类型，非常方便。</p>
+<pre><code class="language-C++">
+--- Person.cpp
+
+extern &quot;C&quot;
+{
+	class Person
+	{
+	public:
+		char* username;
+		char* password;
+	};
+
+	_declspec(dllexport) char* AddPerson(Person person);
+}
+
+--- Person.h
+
+#include &quot;Person.h&quot;
+#include &quot;iostream&quot;
+using namespace std;
+
+char* AddPerson(Person person)
+{
+	return person.username;
+}
+
+</code></pre>
+<p>可以看到C++中AddPerson返回了char*，在C#中我们用IntPtr来接，然后用Marshal将指针转换string，接下来用工具生成好的C#代码拷到项目中来，如下：</p>
+<pre><code class="language-C#">
+    [System.Runtime.InteropServices.StructLayoutAttribute(System.Runtime.InteropServices.LayoutKind.Sequential)]
+    public struct Person
+    {
+        /// char*
+        [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.LPStr)]
+        public string username;
+
+        /// char*
+        [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.LPStr)]
+        public string password;
+    }   
+
+    class Program
+    {
+        [DllImport(&quot;ConsoleApplication1.dll&quot;, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        extern static IntPtr AddPerson(Person person);
+
+        static void Main(string[] args)
+        {
+            var person = new Person() { username = &quot;dotnetfly&quot;, password = &quot;123456&quot; };
+
+            var ptr = AddPerson(person);
+            var str = Marshal.PtrToStringAnsi(ptr);
+
+            Console.WriteLine($&quot;username={str}&quot;);
+
+            Console.ReadLine();
+        }
+    }
+
+---------- output ------------
+
+username=dotnetfly
+
+</code></pre>
+<h3 id="4-回调函数（异步）的处理">4. 回调函数（异步）的处理</h3>
+<p>前面介绍的3种情况都是单向的，即C#向C++传递数据，有的时候也需要C++主动调用C#的函数，我们知道C#是用回调函数，也就是委托包装，具体我就不说了，很开心的是C++可以直接接你的委托，看下怎么实现。</p>
+<pre><code class="language-C++">
+--- Person.cpp
+
+extern &quot;C&quot;
+{
+	//函数指针
+	typedef void(_stdcall* PCALLBACK) (int result);
+	_declspec(dllexport) void AsyncProcess(PCALLBACK ptr);
+}
+
+--- Person.h
+
+#include &quot;Person.h&quot;
+#include &quot;iostream&quot;
+using namespace std;
+
+void AsyncProcess(PCALLBACK ptr)
+{
+	ptr(10);  //回调C#的委托
+}
+
+</code></pre>
+<p>从代码中看到，PCALLBACK就是我定义了函数指针，接受int参数。</p>
+<pre><code class="language-C#">
+    class Program
+    {
+        delegate void Callback(int a);
+
+        [DllImport(&quot;ConsoleApplication1.dll&quot;, CallingConvention = CallingConvention.Cdecl)]
+        extern static void AsyncProcess(Callback callback);
+
+        static void Main(string[] args)
+        {
+            AsyncProcess((i) =&gt;
+            {
+                //这里回调函数哦...
+
+                Console.WriteLine($&quot;这是回调函数哦: {i}&quot;);
+            });
+
+            Console.ReadLine();
+        }
+    }
+
+------- output -------  
+
+这是回调函数哦: 10
+
+</code></pre>
+<p>这里我做了一个自定义的delegate，因为我使用<code>Action&lt;T&gt;</code>不接受泛型抛异常(┬＿┬)。</p>
+<h2 id="四：总结">四：总结</h2>
+<p>这让我想起来前段时间用python实现的线性回归，为了简便我使用了http和C#交互，这次准备用C++改写然后PInvoke直接交互就利索了，好了，借助C++的生态，让 C# 如虎添翼吧~~~</p>
+<hr>
+<h3 id="如您有更多问题与我互动，扫描下方进来吧">如您有更多问题与我互动，扫描下方进来吧~</h3>
+<hr>
+<img src="https://img2020.cnblogs.com/blog/214741/202005/214741-20200522143723695-575216767.png" width="600" height="200" alt="图片名称" align="center">
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-05-29 08:21</span>&nbsp;
+<a href="https://www.cnblogs.com/huangxincheng/">一线码农</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12985351" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12985351);return false;">收藏</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 85195, cb_blogApp = 'huangxincheng', cb_blogUserGuid = '40a06552-abf8-df11-ac81-842b2b196315';
+    var cb_entryId = 12985351, cb_entryCreatedDate = '2020-05-29 08:21', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+    loadSideColumnAd();
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;"></div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+<div id="sidebar_ad"></div>
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 一线码农
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

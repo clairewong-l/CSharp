@@ -1,0 +1,14 @@
+D:\CSharpHomework\Homework10\Crawler\obj\Debug\Crawler.csprojAssemblyReference.cache
+D:\CSharpHomework\Homework10\Crawler\obj\Debug\Crawler.csproj.CoreCompileInputs.cache
+D:\CSharpHomework\Homework10\Crawler\bin\Debug\Crawler.exe.config
+D:\CSharpHomework\Homework10\Crawler\bin\Debug\Crawler.exe
+D:\CSharpHomework\Homework10\Crawler\bin\Debug\Crawler.pdb
+D:\CSharpHomework\Homework10\Crawler\obj\Debug\Crawler.exe
+D:\CSharpHomework\Homework10\Crawler\obj\Debug\Crawler.pdb
+D:\CSharpHomework\传输\Homework9\Crawler\bin\Debug\Crawler.exe.config
+D:\CSharpHomework\传输\Homework9\Crawler\bin\Debug\Crawler.exe
+D:\CSharpHomework\传输\Homework9\Crawler\bin\Debug\Crawler.pdb
+D:\CSharpHomework\传输\Homework9\Crawler\obj\Debug\Crawler.csprojAssemblyReference.cache
+D:\CSharpHomework\传输\Homework9\Crawler\obj\Debug\Crawler.csproj.CoreCompileInputs.cache
+D:\CSharpHomework\传输\Homework9\Crawler\obj\Debug\Crawler.exe
+D:\CSharpHomework\传输\Homework9\Crawler\obj\Debug\Crawler.pdb

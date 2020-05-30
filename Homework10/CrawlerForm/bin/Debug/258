@@ -1,0 +1,447 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="Spring MVC介绍，主要是对其中一些关键注解的理解和应用" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>五、Spring Web应用程序构建 - 鱼换水 - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.ico?v=20200522" type="image/x-icon" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=KCO3_f2W_TC__-jZ7phSnmoFkQuWMJH2yAgA16eE3eY" />
+    <link id="MainCss" rel="stylesheet" href="/skins/blacklowkey/bundle-blacklowkey.min.css?v=j7tHgwfwJlsr7nTrn_ZMLXE-yGBgD-V31AUkQVGn0Hk" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/hasz/custom.css?v=ALKP8Gt4i5tnxrJZgA9AT583Yf0=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/blacklowkey/bundle-blacklowkey-mobile.min.css?v=cYvlxMu_nd6MVfg-vi7YqOC6FaZ7VHFsDM166vO_ekA" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/hasz/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/hasz/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/hasz/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=6bwfCY2e02dLOXNW99G2BHZkYFmw9QyYTWeJ-W-sudo"></script>
+    <script>
+        var currentBlogId = 390354;
+        var currentBlogApp = 'hasz';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'BlackLowKey';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/hasz/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/hasz/">Hellionstu</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/hasz/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+</li>
+<li>
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/hasz/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+34&nbsp; </span>
+<span id="stats_article_count">文章 - 
+1&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+2</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/hasz/p/12990245.html">五、Spring Web应用程序构建</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+    <div id="cnblogs_post_description" style="display: none">
+        Spring MVC介绍，主要是对其中一些关键注解的理解和应用
+    </div>
+<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+    <blockquote>
+<p>内容</p>
+<ul>
+<li>映射请求到Spring控制器</li>
+<li>透明地绑定表单参数</li>
+<li>校验表单提交</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>关键词</p>
+<ul>
+<li>模型-视图-控制器(Model-View-Controller,MVC)</li>
+<li>处理器映射(handle mapping)</li>
+<li>视图解析器(view resolver)</li>
+<li>前端控制器(front controller)</li>
+<li>Java校验API(Java Validation API,JSR-303)</li>
+</ul>
+</blockquote>
+<h2 id="51-请求处理流程">5.1 请求处理流程</h2>
+<p>URL--&gt;DispatcherServlet--&gt;Controller--&gt;Service--&gt;Dao<br>
+当然上面也会反着来进行返回<br>
+第一个定义——Model(模型)</p>
+<blockquote>
+<p><mark>模型</mark>：控制器完成逻辑处理后，通常会产生一些信息，这些信息需要返回给用户并在浏览器上显示，这些信息就被叫做模型(model)。<br>
+<mark>视图</mark>：信息返回后，需要给用户进行格式化后展示，那么信息就需要发送一个视图(View)。<br>
+控制器最后将模型数据打包，并且标示出用于渲染输出的视图名。接下类会将请求连同模型和视图名一起发送给DispatcherServlet。</p>
+</blockquote>
+<h2 id="52-编写基本的控制器">5.2 编写基本的控制器</h2>
+<p>控制器方法时添加<mark>@RequestMapping</mark>注解，这个注解声明了它所要处理的url请求。</p>
+<h3 id="521-定义方法级别的请求">5.2.1 定义方法级别的请求</h3>
+<pre><code class="language-java">package test
+
+@Controller
+public class HomeController() {
+
+	@RequestMapping(value='/',method=GET)
+	public String home() {
+		return &quot;home&quot;;
+	}
+
+}
+
+</code></pre>
+<blockquote>
+<ol>
+<li>@Controller:注解来声明控制器类，这是一个构造器的注解，也是基于@Component注解。但是，它的目的就是辅助实现组件扫描，组件扫描器会自动找到@Controller，并将其注解的类声明为Spring上下文中的一个bean。</li>
+<li>@RequestMapping:属性value指定了这个方法所要处理的请求路径，method属性细化了它所处理的HTTP方法。</li>
+</ol>
+</blockquote>
+<h3 id="522-定义类级别的请求">5.2.2 定义类级别的请求</h3>
+<pre><code class="language-java">package test
+
+@Controller
+@RequestMapping(value='/')
+public class HomeController() {
+	@RequestMapping(method=GET)
+	public String home() {
+		return &quot;home&quot;;
+	}
+}
+</code></pre>
+<blockquote>
+<p>1.一个RequestMapping被添加在了类级别上,意味着这个注解会应用到该控制器的所有的方法上，另一个方法上的注解，则是对类级别注解的一个补充。<br>
+2. 同时RequestMapping还可以接受一个String数组@RequestMapping(value={'/'，'/home'})。</p>
+</blockquote>
+<h2 id="53-接受请求的输入">5.3 接受请求的输入</h2>
+<blockquote>
+<p>关键词</p>
+<ul>
+<li>查询参数（Query Parameter）</li>
+<li>表单参数（Form Parameter）</li>
+<li>路径变量（Path Variable）</li>
+</ul>
+</blockquote>
+<h3 id="531-处理查询参数">5.3.1 处理查询参数</h3>
+<p>@RequestParam()的DefaultValue属性可以接受参数</p>
+<pre><code class="language-java">@RequestParam('id') long id;
+</code></pre>
+<p>但是这种方法不理想，@RequestMapping就有了占位符这个概念</p>
+<pre><code class="language-java">@RequestMapping(value=&quot;/home/{Id}&quot;,method=RequestMethod.GET)
+public String book(@PathVariable(&quot;Id&quot;) long id,Model model) {
+	model.addAttribute(libraryRespo.findOne(id));
+	return &quot;book&quot;;
+}
+</code></pre>
+<blockquote>
+<ol>
+<li>假如路径为/home/12345，则@PathVariable中的Id值为12345，且赋值给long id中的id</li>
+</ol>
+</blockquote>
+<h2 id="54-处理表单">5.4 处理表单</h2>
+<p>提交表单，一般会使用POST请求，请求完成后，最好进行一下重定向——redirect，避免浏览器刷新而重复提交表单。</p>
+<pre><code class="language-java">
+// 写一个接口，实现类略过
+package spittr.data;
+
+import spittr.Spitter;
+
+public interface SpitterRepository {
+
+  Spitter save(Spitter spitter);
+  
+  Spitter findByUsername(String username);
+
+}
+</code></pre>
+<pre><code class="language-java">// 简单写一个Controller
+package spittr.controller
+
+import spittr.data.SpitterRepository;
+import .......AutoWired;
+import .......Model;
+import .......RequestMapping;
+import .......Controller;
+import .......spittr.Spittr
+
+@Controller
+@RequestMapping('/home')
+public class HomeController() {
+	priviate SpitterRepository spitterRepository;
+	@AutoWired
+	public HomeController(SpitterRepository spitterRepository) {
+		this.spitterRepository = spitterRepository;
+	}
+
+	@RequestMapping(value=&quot;/register&quot;,method=POST)
+	public String executeRegister(Spittr spittr) {
+		spitterRepository.save(spittr);
+		// 假设有一个POJO类为spittr，且有一个变量为Username，并生成一个getUsername()的方法
+		return &quot;redirect:/home/&quot; + spittr.getUsername()
+
+	}
+}
+
+</code></pre>
+<blockquote>
+<ol>
+<li>返回值发现重定向字符，就会跳转到重定向加后缀的路径，eg:/home/jobs</li>
+<li>除了redirect还有<mark>forward:</mark>前缀，请求将会前往指定的URL路径，而不再是重定向。</li>
+</ol>
+</blockquote>
+<h3 id="541-校验表单">5.4.1 校验表单</h3>
+<p>Java校验API提供的校验注解</p>
+<table>
+<thead>
+<tr>
+<th>注解</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@AssertFalse</td>
+<td>所注解的元素必须是Boolean类型，并且值为false</td>
+</tr>
+<tr>
+<td>@AssertTrue</td>
+<td>所注解的元素必须是Boolean类型，并且值为True</td>
+</tr>
+<tr>
+<td>@DecimalMax,@DecimalMin</td>
+<td>所注解的元素必须是数字，并且值要大于(小于)或者等于给定的BigDecimalString值</td>
+</tr>
+<tr>
+<td>@Max，@Min</td>
+<td>所注解的元素必须是数字，并且值要大于(小于)或者等于给定的值</td>
+</tr>
+<tr>
+<td>@Digits</td>
+<td>所注解的元素必须是数字，并且值要有指定的位数</td>
+</tr>
+<tr>
+<td>@Future</td>
+<td>所注解的元素必须是将来的一个日期</td>
+</tr>
+<tr>
+<td>@Null，@NotNull</td>
+<td>所注解的元素必须为Null(不为Null)</td>
+</tr>
+<tr>
+<td>@Past</td>
+<td>所注解的元素必须是已过去的一个日期</td>
+</tr>
+<tr>
+<td>@Pattern</td>
+<td>所注解的元素必须匹配给定的正则表达式</td>
+</tr>
+<tr>
+<td>@Size(min=,max=)</td>
+<td>所注解的元素必须是String，集合或数组，并且他的长度要符合给定的范围。</td>
+</tr>
+</tbody>
+</table>
+<pre><code>@RequestMapping(value=&quot;/register&quot;,method=POST)
+	public String executeRegister(@Valid Spittr spittr,Errors errors) {
+
+		if (errors.hasErrors()) {
+			return &quot;registerForm&quot;;
+		}
+		spitterRepository.save(spittr);
+		// 假设有一个POJO类为spittr，且有一个变量为Username，并生成一个getUsername()的方法
+		return &quot;redirect:/home/&quot; + spittr.getUsername()
+
+	}
+
+</code></pre>
+<blockquote>
+<ol>
+<li>添加<mark>@Valid</mark>注解，需要确保这个对象满足校验限制。</li>
+</ol>
+</blockquote>
+<h2 id="55-总结">5.5 总结</h2>
+<p>总体来说，Spring MVC还是很灵活和强大的一个框架，通过自动注解的确减少了很多的工作，更好的开发。这是对于Spring MVC基础知识的记录笔记，后续会对其他的模块进行不断地学习和丰富。</p>
+
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-05-29 23:48</span>&nbsp;
+<a href="https://www.cnblogs.com/hasz/">鱼换水</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12990245" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12990245);return false;">收藏</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 390354, cb_blogApp = 'hasz', cb_blogUserGuid = '98e2ba5c-8cbb-447b-24b7-08d4ef52ecb6';
+    var cb_entryId = 12990245, cb_entryCreatedDate = '2020-05-29 23:48', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+    loadSideColumnAd();
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;"></div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+<div id="sidebar_ad"></div>
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 鱼换水
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

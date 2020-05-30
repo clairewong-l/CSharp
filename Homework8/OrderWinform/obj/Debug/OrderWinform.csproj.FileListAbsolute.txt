@@ -1,0 +1,16 @@
+D:\CSharpHomework\Homework-8\OrderWinform\bin\Debug\OrderWinform.exe.config
+D:\CSharpHomework\Homework-8\OrderWinform\bin\Debug\OrderWinform.exe
+D:\CSharpHomework\Homework-8\OrderWinform\bin\Debug\OrderWinform.pdb
+D:\CSharpHomework\Homework-8\OrderWinform\bin\Debug\OrderApp.exe
+D:\CSharpHomework\Homework-8\OrderWinform\bin\Debug\OrderApp.pdb
+D:\CSharpHomework\Homework-8\OrderWinform\bin\Debug\OrderApp.exe.config
+D:\CSharpHomework\Homework-8\OrderWinform\obj\Debug\OrderWinform.csprojAssemblyReference.cache
+D:\CSharpHomework\Homework-8\OrderWinform\obj\Debug\OrderWinform.Form1.resources
+D:\CSharpHomework\Homework-8\OrderWinform\obj\Debug\OrderWinform.Properties.Resources.resources
+D:\CSharpHomework\Homework-8\OrderWinform\obj\Debug\OrderWinform.csproj.GenerateResource.cache
+D:\CSharpHomework\Homework-8\OrderWinform\obj\Debug\OrderWinform.csproj.CoreCompileInputs.cache
+D:\CSharpHomework\Homework-8\OrderWinform\obj\Debug\OrderWinform.csproj.CopyComplete
+D:\CSharpHomework\Homework-8\OrderWinform\obj\Debug\OrderWinform.exe
+D:\CSharpHomework\Homework-8\OrderWinform\obj\Debug\OrderWinform.pdb
+D:\CSharpHomework\Homework-8\OrderWinform\obj\Debug\OrderWinform.NewOrderForm.resources
+D:\CSharpHomework\Homework-8\OrderWinform\obj\Debug\OrderWinform.NewItemForm.resources
