@@ -1,0 +1,10 @@
+D:\CSharpHomework\homework1\CalculatorForm\bin\Debug\CalculatorForm.exe.config
+D:\CSharpHomework\homework1\CalculatorForm\bin\Debug\CalculatorForm.exe
+D:\CSharpHomework\homework1\CalculatorForm\bin\Debug\CalculatorForm.pdb
+D:\CSharpHomework\homework1\CalculatorForm\obj\Debug\CalculatorForm.csprojAssemblyReference.cache
+D:\CSharpHomework\homework1\CalculatorForm\obj\Debug\CalculatorForm.Form1.resources
+D:\CSharpHomework\homework1\CalculatorForm\obj\Debug\CalculatorForm.Properties.Resources.resources
+D:\CSharpHomework\homework1\CalculatorForm\obj\Debug\CalculatorForm.csproj.GenerateResource.cache
+D:\CSharpHomework\homework1\CalculatorForm\obj\Debug\CalculatorForm.csproj.CoreCompileInputs.cache
+D:\CSharpHomework\homework1\CalculatorForm\obj\Debug\CalculatorForm.exe
+D:\CSharpHomework\homework1\CalculatorForm\obj\Debug\CalculatorForm.pdb
